@@ -10,7 +10,7 @@ body {
     gap: 15px;
 }
 .links {
-    color: rgb(100, 87, 87);
+    color: rgb(0, 0, 0);
     transition: color 0.2s ease-in-out;
 }
 .links:hover {
@@ -24,13 +24,13 @@ body {
 }
 h3{
 
-    border: #000000 double 5px;
+    border: #000000 solid 5px;
     border-radius: 10px;
     padding:5px ;
     margin: 15px;
     font-size: 20px;
     font-weight: 900;
-    font-style: inherit;
+    font-family: sans-serif;
     font-variant: small-caps;
 
 }
