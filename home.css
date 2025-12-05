@@ -1,0 +1,44 @@
+body {
+    background-color: rgb(176, 189, 108);
+}
+
+.bar{
+
+    font-size: 15px;
+    display: flex;
+    list-style: none;
+    gap: 15px;
+}
+.links {
+    color: rgb(100, 87, 87);
+    transition: color 0.2s ease-in-out;
+}
+.links:hover {
+    color: #000000;
+}
+.header{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    padding: 10px;
+}
+h3{
+
+    border: #000000 double 5px;
+    border-radius: 10px;
+    padding:5px ;
+    margin: 15px;
+    font-size: 20px;
+    font-weight: 900;
+    font-style: inherit;
+    font-variant: small-caps;
+
+}
+a{
+    text-decoration: none;
+}
+hr{
+    border: none;
+    height: 2px;
+    background-color: #000000;
+}
