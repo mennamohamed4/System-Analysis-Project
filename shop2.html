@@ -1,0 +1,489 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Library Shop 2</title>
+
+<style>
+    :root{
+        --card: rgba(255,255,255,0.9);
+        --accent: #3c240f;
+        --muted: #eee;
+        --radius: 18px;
+    }
+    *{
+        margin:0; padding:0;
+        box-sizing:border-box;
+        font-family:"Segoe UI", Tahoma, Arial, "Noto Kufi Arabic", sans-serif;
+    }
+
+    body{
+        background-image:url("https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=1200&q=60");
+        background-size:cover;
+        background-position:center;
+        background-attachment:fixed;
+        padding:30px;
+        color:#ffffff;
+        position:relative;
+    }
+
+    body::before{
+        content:"";
+        position:fixed;
+        inset:0;
+        background:rgba(0,0,0,0.55);
+        backdrop-filter:blur(2px);
+        z-index:-1;
+    }
+
+    .category-block{
+        margin-bottom:45px;
+    }
+
+    .category-title{
+        font-size:26px;
+        font-weight:800;
+        margin-bottom:20px;
+        padding:10px 0;
+        border-bottom:3px solid var(--accent);
+        width:fit-content;
+        color:white;
+    }
+
+    .books-grid{
+        display: grid;
+        gap:22px;
+        grid-template-columns:repeat(auto-fill,minmax(170px,1fr));
+    }
+
+    .book-card{
+        background:var(--card);
+        padding:14px;
+        border-radius:var(--radius);
+        backdrop-filter:blur(6px);
+        box-shadow:0 10px 24px rgba(0,0,0,0.3);
+        display:flex;
+        flex-direction:column;
+        gap:10px;
+        transition:0.3s;
+    }
+    .book-card:hover{
+        transform:translateY(-6px);
+        box-shadow:0 20px 34px rgba(0,0,0,0.4);
+    }
+
+    .cover{
+        width:100%;
+        padding-top:140%;
+        position:relative;
+        border-radius:var(--radius);
+        overflow:hidden;
+        background:#ccc;
+    }
+    .cover img{
+        position:absolute;
+        inset:0;
+        width:100%;
+        height:100%;
+        object-fit:cover;
+        transition:0.25s;
+    }
+
+    .hover-details{
+        position:absolute;
+        inset:0;
+        display:flex;
+        justify-content:flex-end;
+        align-items:flex-end;
+        opacity:0;
+        transition:0.25s;
+        background:rgba(0,0,0,0.45);
+        backdrop-filter:blur(3px);
+        padding:10px;
+    }
+    .cover:hover .hover-details{
+        opacity:1;
+    }
+    .hover-details p{
+        font-size:11px;
+        color:white;
+        line-height:1.2;
+        background:rgba(0,0,0,0.55);
+        padding:8px;
+        border-radius:10px;
+    }
+
+    .title{
+        font-size:15px;
+        font-weight:700;
+        color:#111;
+    }
+    .meta{
+        display:flex;
+        justify-content:space-between;
+        font-size:13px;
+        color:#333;
+    }
+    .price{
+        color:var(--accent);
+        font-weight:700;
+    }
+
+    .cart-btn{
+        margin-top:4px;
+        padding:10px;
+        width:100%;
+        background:var(--accent);
+        border:none;
+        border-radius:var(--radius);
+        color:white;
+        font-size:14px;
+        cursor:pointer;
+        transition:0.25s;
+    }
+    .cart-btn:hover{
+        background:#f0c282;
+        transform:translateY(-2px);
+    }
+
+    .seemore{
+        border: #3c240f solid;
+        background-color: #3c240f;
+        display: block;
+        border-radius: 2px;
+        text-align: center;
+    }
+
+    .seemore:hover{
+        background:#f0c282;
+        transform:translateY(-2px);
+        border: #f0c282 solid;
+        transition:0.3s;
+    }
+
+    a{
+        color: #ffffff;
+        text-decoration: none;
+    }
+
+</style>
+</head>
+
+<body>
+
+    <section class="category-block">
+        <h2 class="category-title">Novels</h2>
+
+        <div class="books-grid">
+            <div class="book-card">
+                <div class="cover">
+                    <img src="Photos/download (2).jpeg">
+                    <div class="hover-details">
+                        <p>
+                            المؤلف: عمرو عبد الحميد <br>
+                            النشر: 2018<br>
+                        </p>
+                    </div>
+                </div>
+                <div class="title">قواعد جارتين</div>
+                <div class="meta">
+                    <span class="price">145 EGP</span>
+                </div>
+                <button class="cart-btn">Add to Cart</button>
+                <button class="cart-btn">view book details</button>
+            </div>
+
+            <div class="book-card">
+                <div class="cover">
+                    <img src="photos/download (3).jpeg">
+                    <div class="hover-details">
+                        <p>
+                            المؤلف: عمرو عبد الحميد<br>
+                            النشر: 2019<br>
+                        </p>
+                    </div>
+                </div>
+                <div class="title">دقات الشامو</div>
+                <div class="meta">
+                    <span class="price">145 EGP</span>
+                </div>
+                <button class="cart-btn">Add to Cart</button>
+                <button class="cart-btn">view book details</button>
+            </div>
+
+            <div class="book-card">
+                <div class="cover">
+                    <img src="photos/download.jpeg">
+                    <div class="hover-details">
+                        <p>
+                         المؤلف: عمرو عبد الحميد  <br>
+                            النشر: 2020<br>
+                        </p>
+                    </div>
+                </div>
+                <div class="title">امواج اكما</div>
+                <div class="meta">
+                    <span class="price">145 EGP</span>
+                </div>
+                <button class="cart-btn">Add to Cart</button>
+                <button class="cart-btn">view book details</button>
+            </div>
+
+            <div class="book-card">
+                <div class="cover">
+                    <img src="photos/download (1).jpeg">
+                    <div class="hover-details">
+                        <p>
+                            المؤلف: عمرو عبد الحميد<br>
+                            النشر: 2021<br>
+                        </p>
+                    </div>
+                </div>
+                <div class="title">فتاة الياقة الزرقاء</div>
+                <div class="meta">
+                    <span class="price">240 EGP</span>
+                </div>
+                <button class="cart-btn">Add to Cart</button>
+                <button class="cart-btn">view book details</button>
+            </div>
+
+            <div class="book-card">
+                <div class="cover">
+                    <img src="photos/download (4).jpeg">
+                    <div class="hover-details">
+                        <p>
+                            المؤلف: معتز حسنين <br>
+                            النشر: 2014<br>
+                        </p>
+                    </div>
+                </div>
+                <div class="title">صانع الاحلام</div>
+                <div class="meta">
+                    <span class="price">220 EGP</span>
+                </div>
+                <button class="cart-btn">Add to Cart</button>
+                <button class="cart-btn">view book details</button>
+            </div>
+
+            <div class="book-card">
+                <div class="cover">
+                    <img src="photos/download (5).jpeg">
+                    <div class="hover-details">
+                        <p>
+                            المؤلف: عمرو عبد الحميد<br>
+                            النشر: 2025<br>
+                        </p>
+                    </div>
+                </div>
+                <div class="title">واحة اليعقوب</div>
+                <div class="meta">
+                    <span class="price">350 EGP</span>
+                </div>
+                <button class="cart-btn">Add to Cart</button>
+                <button class="cart-btn">view book details</button>
+            </div>
+
+            <div class="book-card">
+                <div class="cover">
+                    <img src="photos/download (6).jpeg">
+                    <div class="hover-details">
+                        <p>
+                            المؤلفة: د.حنان لاشين<br>
+                            النشر: 2017<br>
+                        </p>
+                    </div>
+                </div>
+                <div class="title">ايكادولي</div>
+                <div class="meta">
+                    <span class="price">304 EGP</span>
+                </div>
+                <button class="cart-btn">Add to Cart</button>
+                <button class="cart-btn">view book details</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="category-block">
+        <h2 class="category-title">history</h2>
+     
+        <div class="books-grid">
+            <div class="book-card">
+                <div class="cover">
+                    <img src="photos/التاريخ-الاجتماعي-للمعرفة-من-الموسوعة-إلى-ويكيبيدي-61926-250x375-webp.webp">
+                    <div class="hover-details">
+                        <p>
+                          المؤلف: بيتر بيرك<br>
+                        </p>
+                    </div>
+                </div>
+                <div class="title">التاريخ الاجتماعي للمعرفة (من الموسوعة إلى ويكيبيديا الجزء 2)</div>
+                <div class="meta">
+                    <span class="price">357 EGP</span>
+                </div>
+                <button class="cart-btn">Add to Cart</button>
+                <button class="cart-btn">view book details</button>
+            </div>
+
+            <div class="book-card">
+                <div class="cover">
+                    <img src="photos/موسوعة-مصر-في-القرن-العشرين-الأدب-وأقسامه-61613-250x375-webp.webp">
+                    <div class="hover-details">
+                        <p>
+                         المؤلف: ياسر أحمد رزق <br>
+                        </p>
+                    </div>
+                </div>
+                <div class="title">موسوعة مصر في القرن العشرين (الأدب وأقسامه)</div>
+                <div class="meta">
+                    <span class="price">357 EGP</span>
+                </div>
+                <button class="cart-btn">Add to Cart</button>
+                <button class="cart-btn">view book details</button>
+            </div>
+
+            <div class="book-card">
+                <div class="cover">
+                    <img src="photos/موسوعة-مصر-في-القرن-العشرين-تجليات-متعددة-61614-250x375-webp.webp">
+                    <div class="hover-details">
+                        <p>
+                         المؤلف: ياسر أحمد رزق <br>
+                        </p>
+                    </div>
+                </div>
+                <div class="title">موسوعة مصر في القرن العشرين (تجليات متعددة)</div>
+                <div class="meta">
+                    <span class="price">357 EGP</span>
+                </div>
+                <button class="cart-btn">Add to Cart</button>
+                <button class="cart-btn">view book details</button>
+            </div>
+
+            <div class="book-card">
+                <div class="cover">
+                    <img src="photos/موسوعة-مصر-في-القرن-العشرين-إخراج-سيناريو-موسيقي-ا-61615-250x375-webp.webp">
+                    <div class="hover-details">
+                        <p>
+                         المؤلف: ياسر أحمد رزق <br>
+                        </p>
+                    </div>
+                </div>
+                <div class="title">موسوعة مصر في القرن العشرين (إخراج سيناريو موسيقي الفيلم)</div>
+                <div class="meta">
+                    <span class="price">357 EGP</span>
+                </div>
+                <button class="cart-btn">Add to Cart</button>
+                <button class="cart-btn">view book details</button>
+            </div>
+
+            <div class="book-card">
+                <div class="cover">
+                    <img src="photos/موسوعة-مصر-في-القرن-العشرين-فنون-تمثيل-61616-250x375-webp.webp">
+                    <div class="hover-details">
+                        <p>
+                         المؤلف: ياسر أحمد رزق <br>
+                        </p>
+                    </div>
+                </div>
+                <div class="title">موسوعة مصر في القرن العشرين (فنون تمثيل)</div>
+                <div class="meta">
+                    <span class="price">357 EGP</span>
+                </div>
+                <button class="cart-btn">Add to Cart</button>
+                <button class="cart-btn">view book details</button>
+            </div>
+
+            <div class="book-card">
+                <div class="cover">
+                    <img src="photos/متون-التوابيت-61610-250x375-webp.webp">
+                    <div class="hover-details">
+                        <p>
+                         المؤلف: ياسر أحمد رزق <br>
+                        </p>
+                    </div>
+                </div>
+                <div class="title">متون التوابيت</div>
+                <div class="meta">
+                    <span class="price">357 EGP</span>
+                </div>
+                <button class="cart-btn">Add to Cart</button>
+                <button class="cart-btn">view book details</button>
+            </div>
+    </section>
+
+        <section class="category-block">
+        <h2 class="category-title">Art and Mussic</h2>
+     
+        <div class="books-grid">
+            <div class="book-card">
+                <div class="cover">
+                    <img src="photos/أزياء-من-الخليج-إلى-المحيط-53429-250x375-webp.webp">
+                    <div class="hover-details">
+                        <p>
+                          المؤلف:  مروى الشاذلي<br>
+                        </p>
+                    </div>
+                </div>
+                <div class="title">أزياء من الخليج إلى المحيط</div>
+                <div class="meta">
+                    <span class="price">220 EGP</span>
+                </div>
+                <button class="cart-btn">Add to Cart</button>
+                <button class="cart-btn">view book details</button>
+            </div>
+
+            <div class="book-card">
+                <div class="cover">
+                    <img src="photos/مصر-الفنانة-54590-250x375-webp.webp">
+                    <div class="hover-details">
+                        <p>
+                         المؤلف: شريف صالح  <br>
+                        </p>
+                    </div>
+                </div>
+                <div class="title">مصر الفنانة</div>
+                <div class="meta">
+                    <span class="price">240 EGP</span>
+                </div>
+                <button class="cart-btn">Add to Cart</button>
+                <button class="cart-btn">view book details</button>
+            </div>
+
+            <div class="book-card">
+                <div class="cover">
+                    <img src="photos/كشكول-السينما-60246-250x375-webp.webp">
+                    <div class="hover-details">
+                        <p>
+                         المؤلف: محمود عبدالشكور  <br>
+                        </p>
+                    </div>
+                </div>
+                <div class="title">كشكول السينما</div>
+                <div class="meta">
+                    <span class="price">300 EGP</span>
+                </div>
+                <button class="cart-btn">Add to Cart</button>
+                <button class="cart-btn">view book details</button>
+            </div>
+
+            <div class="book-card">
+                <div class="cover">
+                    <img src="photos/السينما-والناس-61465-250x375-webp.webp">
+                    <div class="hover-details">
+                        <p>
+                         المؤلف: طارق إبراهيم حسان <br>
+                        </p>
+                    </div>
+                </div>
+                <div class="title">السينما والناس</div>
+                <div class="meta">
+                    <span class="price">860 EGP</span>
+                </div>
+                <button class="cart-btn">Add to Cart</button>
+                <button class="cart-btn">view book details</button>
+            </div>            
+    </section>
+
+    <div class="seemore"><a href="shop2.html">see more</a></div>
+</body>
+</html>
